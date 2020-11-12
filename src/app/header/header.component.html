@@ -1,0 +1,98 @@
+<nav class="navbar navbar-dark navbar-expand-lg  portfolio-navbar gradient">
+    <div class="container">
+        <!-- <a class="navbar-brand ">
+            <i class="fa fa-stethoscope"></i><strong class="title">GreenCap</strong>
+        </a> -->
+        <a class="navbar-brand" href="#First">
+            <img style="max-height: 40px;" src="../../assets/images/onlinelogomaker-110220-1328-0273.svg">
+            <!--img src="" alt="logo"-->
+        </a>
+        <button class="navbar-toggler collapsed" data-toggle="collapse" data-target="#navbarNav" aria-expanded="false" aria-controls="navbar"> <span class="sr-only"></span><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="nav navbar-nav ">
+                <li class="nav-item" ><a class="nav-link" data-toggle="modal" data-target=".bd-example-modal-lg"><strong>Search</strong><p class="text-muted">search for doctors</p></a></li>
+                <li class="nav-item" ><a class="nav-link" ><strong>Doctors</strong><p class="text-muted">consult top doctors</p></a></li>
+                <li class="nav-item" ><a class="nav-link" ><strong>pharmacy</strong><p class="text-muted">Medicine & health products</p></a></li>
+                <li class="nav-item" ><a class="nav-link" ><strong>Diagnostics</strong><p class="text-muted">Book tests & check-ups</p></a></li>
+                <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">For providers</a>
+                    <div class="dropdown-menu" role="menu">
+                        <a class="dropdown-item" role="presentation" >List your practice</a>
+                        <a class="dropdown-item" role="presentation" >Software for providers</a>
+                        <a class="dropdown-item" role="presentation" >corporate wellness</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Security & help</a>
+                    <div class="dropdown-menu" role="menu">
+                        <a class="dropdown-item" role="presentation" >Data security</a>
+                        <a class="dropdown-item" role="presentation" >Help</a>
+                    </div>
+                </li>
+                <!-- <li class="nav-item" *ngIf="!isAuthenticated"><a class="nav-link" routerLink="/auth"><strong>Login/Signup</strong></a></li> -->
+                <li class="nav-item dropdown" *ngIf="isAuthenticated"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">John</a>
+                    <div class="dropdown-menu" role="menu">
+                        <a class="dropdown-item" role="presentation" routerLink='/profile'>My Profile</a>
+                        <a class="dropdown-item" role="presentation" href="appointments.html">My appointments</a>
+                        <a class="dropdown-item" role="presentation" href="orders.html">My orders</a>
+                        <a class="dropdown-item" role="presentation" href="consultations.html">My consultaions</a>
+                        <a class="dropdown-item" role="presentation" href="prescriptions.html">My medical records</a>
+                        <a class="dropdown-item" role="presentation" href="prescriptions.html">My prescriptions</a>
+                        <a class="dropdown-item" role="presentation" href="labreports.html">My lab reports</a>
+                        <a class="dropdown-item" role="presentation" href="mycart.html">My cart</a>
+                        <a class="dropdown-item" role="presentation" href="payments.html">payments</a>
+                        <a class="dropdown-item" role="presentation" href="#">Settings</a>
+                        <a class="dropdown-item" role="button" (click)="onLogout()">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button> -->
+<div class="modal fade bd-example-modal-lg" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" >
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Search for doctors,clinics,pharmacies</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <section class="search-sec">
+                    <div class="container">
+                        <form action="#" method="post" novalidate="novalidate">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="row"> 
+                                        <div class="col-lg-6 col-md-6 col-sm-12 p-0">
+                                            <!-- <input type="text" class="form-control search-slt" placeholder="Search"> -->
+                                            <select class="form-control search-slt" id="exampleFormControlSelect1" placeholder="Search doctors" (change)="selectSpecHandler($event)">
+                                                <option>All Doctors</option>
+                                                <option *ngFor="let spec of specializations">{{spec}}</option>
+                                            </select>
+                                        </div>
+                                        <!-- <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                                            <input type="text" class="form-control search-slt" placeholder="Enter Drop City">
+                                        </div> -->
+                                        <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                                            <select class="form-control search-slt" id="exampleFormControlSelect2" placeholder="Location" (change)="selectLocationHandler($event)">
+                                                <option> All Locations </option>
+                                                <option *ngFor="let location of locations">{{location}}</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                                            <button type="button" class="btn btn-danger wrn-btn" (click)="fetchDoctors()"  data-dismiss="modal" >Search</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+            
+        </div>
+    </div>
+</div> 

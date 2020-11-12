@@ -1,0 +1,70 @@
+<div class='container'>
+    <div class="row">
+        <div class='col-sm-12 col-lg-5 col-md-5 offset-lg-1 offest-md-4'>
+            <div class="card">
+                <div class="card-header">
+                    <i class="fa fa-video-camera" *ngIf="isVideo"></i>
+                    <i class="fa fa-hospital-o" *ngIf="!isVideo"></i>
+                    <strong>{{consultType}} Consultation </strong>
+                    <div class="caption text-muted" *ngIf="isVideo">Includes audio,video call and Chat</div>
+                </div>
+                <div class="card-body">
+                    <div class='datetime'>
+                        <i class="fa fa-calendar"></i>   On <strong>{{consultDate | date }}</strong> 
+                        <div><i class="fa fa-clock-o"></i>   at <strong>{{consultTime}}</strong> </div>
+                    </div>
+                    <div class="cdat"><strong>Change Date and time</strong></div>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col-lg-3 col-sm-3 col-md-3">
+                            <img src="../../assets/images/doctor-thumb-02.jpg"class="img-fluid" alt="User Image">
+                        </div>
+                        <div class="col-lg-9 col-sm-9 col-md-9">
+                            <div id="docName">Dr.{{doctor.name}}</div>
+                            <small class="text-muted">{{qualification}} - {{specialization}}</small>
+                            <!-- <small class="text-muted">Dentist, Periodontist, Implantologist</small> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col-lg-3 col-sm-3 col-md-3">
+                            <img src="../../assets/images/feature-01.jpg"class="img-fluid" alt="User Image">
+                        </div>
+                        <div class="col-lg-9 col-sm-9 col-md-9">
+                            <div id="docName">{{doctor.clinic}} Clinic</div>
+                            <small class="text-muted">House Number: 16-31-H496, Abhi's Arcade, 1st Floor, 6th Phase, KPHB Colony,</small>
+                            <div><small class="text-muted">Hyderabad</small></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='col-sm-12 col-lg-5 col-md-5 '>
+            <h4>Patient Details</h4>
+            <h6>Please provide the following details</h6>
+            <form>
+                <div class="form-group">
+                    <label for="patientName">Enter Patient's name:</label>
+                    <input type="text" class="form-control" id="patientName" placeholder="patient name">
+                </div>
+                <div class="form-group">
+                    <label for="Phonenumber">Enter Patient's phone number:</label>
+                    <input type="text" class="form-control" id="Phonenumber" placeholder="Phone number">
+                </div>
+                <div class="form-group">
+                    <label for="email">Enter Patient's phone number:</label>
+                    <input type="email" class="form-control" id="email" placeholder="E-mail">
+                </div>
+                <div class="form-group">
+                    <label for="consultation-fee">Consultation Fee:</label>
+                    <p>Rs.300</p>
+                </div>
+                <div class="form-group">
+                    <button type="submit"  class="btn btn-primary btn-block">confirm & pay </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

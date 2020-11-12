@@ -1,0 +1,323 @@
+{
+    "doctors": [
+        {
+            "id": 1,
+            "name": "Aravind",
+            "specialization": ["Dentist,ayurveda"],
+            "experience": 3,
+            "qualification":["BDS","MDS"],
+            "location":"Kukatpally",
+            "clinic":"Sanjeevini",
+            "description":".....",
+            "rating":4.5,
+            "consultationfee":400,
+            "isVerified":true,
+            "videoavailability":[
+                ["9.30AM","10.00AM","12.30PM","1.00PM","3.30PM"],
+                []
+            ],
+            "clinicavailability":[
+                [],
+                ["9.00AM","10.30AM","12.30pM","2.00PM","7.30PM"],
+                ["9.15AM","11.00AM","11.30AM","5.00PM","8.30PM"],
+                [],
+                ["9.30AM","10.00AM","12.30PM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM","1.00AM","8.40PM"]
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Dhananjay",
+            "specialization": ["Dermatologist"],
+            "experience": 13,
+            "qualification":["BHMS","MD","MBBS"],
+            "location":"Jubilee hills",
+            "clinic":"dj skincare",
+            "description":".....",
+            "rating":4,
+            "consultationfee":100,
+            "isVerified":true,
+            "videoavailability":[
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.30AM","10.00AM","12.30PM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","12.30pM","2.00PM","7.30PM"],
+                ["9.15AM","11.00AM","11.30AM","5.00PM","8.30PM"]
+            ],
+            "clinicavailability":[
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","12.30pM","2.00PM","7.30PM"],
+                ["9.15AM","11.00AM","11.30AM","5.00PM","8.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.30AM","10.00AM","12.30PM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],   
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"]
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Kesava",
+            "specialization": ["General physian"],
+            "experience": 8,
+            "qualification":["MBBS","MD-general medicine"],
+            "location":"Banjara hills",
+            "clinic":"NIMS",
+            "description":".....",
+            "rating":4.5,
+            "consultationfee":300,
+            "isVerified":true,
+            "videoavailability":[
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.30AM","10.00AM","12.30PM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","12.30pM","2.00PM","7.30PM"],
+                ["9.15AM","11.00AM","11.30AM","5.00PM","8.30PM"]
+            ],
+            "clinicavailability":[
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","12.30pM","2.00PM","7.30PM"],
+                ["9.15AM","11.00AM","11.30AM","5.00PM","8.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.30AM","10.00AM","12.30PM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"]
+            ]
+        },
+        {
+            "id": 4,
+            "name": "venkatesh",
+            "specialization": ["ENT"],
+            "experience": 10,
+            "qualification":["MBBS","MS-ENT"],
+            "location":"Gachibowli",
+            "clinic":"pristyn care",
+            "description":".....",
+            "rating":4,
+            "consultationfee":200,
+            "isVerified":true,
+            "videoavailability":[
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.30AM","10.00AM","12.30PM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","12.30pM","2.00PM","7.30PM"],
+                ["9.15AM","11.00AM","11.30AM","5.00PM","8.30PM"]
+            ],
+            "clinicavailability":[
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","12.30pM","2.00PM","7.30PM"],
+                ["9.15AM","11.00AM","11.30AM","5.00PM","8.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.30AM","10.00AM","12.30PM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"]
+            ]
+        },
+        {
+            "id": 5,
+            "name": "Mounika",
+            "specialization": ["Ayurveda"],
+            "experience": 17,
+            "qualification":["BAMS","MD"],
+            "location":"Dilsukhnagar",
+            "clinic":"Ayush-ayurvedha",
+            "description":".....",
+            "rating":4.5,
+            "consultationfee":500,
+            "isVerified":true,
+            "videoavailability":[
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.30AM","10.00AM","12.30PM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","12.30pM","2.00PM","7.30PM"],
+                ["9.15AM","11.00AM","11.30AM","5.00PM","8.30PM"]
+            ],
+            "clinicavailability":[
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","12.30pM","2.00PM","7.30PM"],
+                ["9.15AM","11.00AM","11.30AM","5.00PM","8.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.30AM","10.00AM","12.30PM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"]
+            ]
+        },
+        {
+            "id": 6,
+            "name": "sudha",
+            "specialization": ["Gynecologist"],
+            "experience": 3,
+            "qualification":["MBBS","MD"],
+            "location":"Kukatpally",
+            "clinic":"Sudha clinic",
+            "description":".....",
+            "rating":4.5,
+            "consultationfee":600,
+            "isVerified":true,
+            "videoavailability":[
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.30AM","10.00AM","12.30PM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","12.30pM","2.00PM","7.30PM"],
+                ["9.15AM","11.00AM","11.30AM","5.00PM","8.30PM"]
+            ],
+            "clinicavailability":[
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","12.30pM","2.00PM","7.30PM"],
+                ["9.15AM","11.00AM","11.30AM","5.00PM","8.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.30AM","10.00AM","12.30PM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"]
+            ]
+        },
+        {
+            "id": 7,
+            "name": "mahesh kumar",
+            "specialization": ["Homeopath"],
+            "experience": 23,
+            "qualification":["BHMS","M.D.Hom"],
+            "location":"Dilsukhnagar",
+            "clinic":"Ayush homeopath",
+            "description":".....",
+            "rating":3.5,
+            "consultationfee":150,
+            "isVerified":true,
+            "videoavailability":[
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.30AM","10.00AM","12.30PM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","12.30pM","2.00PM","7.30PM"],
+                ["9.15AM","11.00AM","11.30AM","5.00PM","8.30PM"]
+            ],
+            "clinicavailability":[
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","12.30pM","2.00PM","7.30PM"],
+                ["9.15AM","11.00AM","11.30AM","5.00PM","8.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.30AM","10.00AM","12.30PM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"]
+            ]
+        },
+        {
+            "id": 8,
+            "name": "Chethan",
+            "specialization": ["Dentist"],
+            "experience":8,
+            "qualification":["BDS","MDS"],
+            "location":"Gachibowli",
+            "clinic":"Global HealthCare",
+            "description":".....",
+            "rating":4.1,
+            "consultationfee":250,
+            "isVerified":true,
+            "videoavailability":[
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.30AM","10.00AM","12.30PM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","12.30pM","2.00PM","7.30PM"],
+                ["9.15AM","11.00AM","11.30AM","5.00PM","8.30PM"]
+            ],
+            "clinicavailability":[
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","12.30pM","2.00PM","7.30PM"],
+                ["9.15AM","11.00AM","11.30AM","5.00PM","8.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.30AM","10.00AM","12.30PM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"]
+            ]
+        },
+        {
+            "id": 9,
+            "name": "prasanthi",
+            "specialization": ["ENT"],
+            "experience": 3,
+            "qualification":["MBBS","MS-ENT"],
+            "location":"Banjara hills",
+            "clinic":"Sanjeevini",
+            "description":".....",
+            "rating":4.5,
+            "consultationfee":200,
+            "isVerified":true,
+            "videoavailability":[
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.30AM","10.00AM","12.30PM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","12.30pM","2.00PM","7.30PM"],
+                ["9.15AM","11.00AM","11.30AM","5.00PM","8.30PM"]
+            ],
+            "clinicavailability":[
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","12.30pM","2.00PM","7.30PM"],
+                ["9.15AM","11.00AM","11.30AM","5.00PM","8.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.30AM","10.00AM","12.30PM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"]
+            ]
+        },
+        {
+            "id": 10,
+            "name": "Ravi kumar",
+            "specialization": ["Ayurveda"],
+            "experience": 23,
+            "qualification":["BAMS","MD"],
+            "location":"Jubilee hills",
+            "clinic":"Ayush-ayurvedha",
+            "description":".....",
+            "rating":4,
+            "consultationfee":200,
+            "isVerified":true,
+            "videoavailability":[
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.30AM","10.00AM","12.30PM","1.00PM","3.30PM"]
+            ],
+            "clinicavailability":[
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","12.30pM","2.00PM","7.30PM"],
+                ["9.15AM","11.00AM","11.30AM","5.00PM","8.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.30AM","10.00AM","12.30PM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"],
+                ["9.00AM","10.30AM","11.30AM","1.00PM","3.30PM"]
+            ]
+        }
+
+    ],
+
+    "locations":[
+        "Kukatpally",
+        "Dilsukhnagar",
+        "Gachibowli",
+        "Jubilee hills",
+        "Banjara hills"
+    ],
+
+    "specializations":[
+        "Dentist",
+        "Dermatologist",
+        "General physian",
+        "Gynecologist",
+        "ENT",
+        "Ayurveda",
+        "Homeopath"
+    ]
+}
