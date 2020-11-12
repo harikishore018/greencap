@@ -18,7 +18,7 @@
                 <div class="card-footer">
                     <div class="row">
                         <div class="col-lg-3 col-sm-3 col-md-3">
-                            <img src="../../assets/images/doctor-thumb-02.jpg"class="img-fluid" alt="User Image">
+                            <img src="{{doctor.profileurl}}"class="img-fluid" alt="User Image">
                         </div>
                         <div class="col-lg-9 col-sm-9 col-md-9">
                             <div id="docName">Dr.{{doctor.name}}</div>
@@ -58,8 +58,7 @@
                     <input type="email" class="form-control" id="email" placeholder="E-mail">
                 </div>
                 <div class="form-group">
-                    <label for="consultation-fee">Consultation Fee:</label>
-                    <p>Rs.300</p>
+                    <label for="consultation-fee">Consultation Fee: Rs.300</label>
                 </div>
                 <div class="form-group">
                     <button type="submit"  class="btn btn-primary btn-block">confirm & pay </button>
