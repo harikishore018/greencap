@@ -44,18 +44,22 @@
         <div class='col-sm-12 col-lg-5 col-md-5 '>
             <h4>Patient Details</h4>
             <h6>Please provide the following details</h6>
-            <form>
+            <form (submit)="onSubmit(appointment)" #appointment="ngForm">
                 <div class="form-group">
                     <label for="patientName">Enter Patient's name:</label>
-                    <input type="text" class="form-control" id="patientName" placeholder="patient name">
+                    <input type="text" class="form-control" id="patientName" placeholder="patient name" name="patientName" required ngModel>
                 </div>
                 <div class="form-group">
                     <label for="Phonenumber">Enter Patient's phone number:</label>
-                    <input type="text" class="form-control" id="Phonenumber" placeholder="Phone number">
+                    <input type="text" class="form-control" id="Phonenumber" placeholder="Phone number"  name="phoneno" required ngModel>
                 </div>
                 <div class="form-group">
-                    <label for="email">Enter Patient's phone number:</label>
-                    <input type="email" class="form-control" id="email" placeholder="E-mail">
+                    <label for="email">Enter Patient's Email:</label>
+                    <input type="email" class="form-control" id="email" placeholder="E-mail" name="email" required ngModel>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea class="form-control" id="desc" placeholder="Description or reason" name="desc" ngModel required></textarea>
                 </div>
                 <div class="form-group">
                     <label for="consultation-fee">Consultation Fee: Rs.300</label>

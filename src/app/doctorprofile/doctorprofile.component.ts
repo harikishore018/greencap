@@ -41,6 +41,7 @@ export class DoctorprofileComponent implements OnInit {
   //   clinicavailability:[[]]
   // };
   doctor:doctorProfile={
+    id:"",
     name:"",
     bio:"",
     profileurl:"",

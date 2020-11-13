@@ -15,9 +15,14 @@ export class AuthComponent implements OnInit {
   isLoginMode =true;
   isLoading = false;
   error: string = null;
+  isPatient:boolean=true;
 
   onSwitchMode(){
     this.isLoginMode = !this.isLoginMode;
+  }
+
+  onDoctorSwitch(){
+    this.isPatient=!this.isPatient;
   }
 
   constructor(private authService: AuthService) { }

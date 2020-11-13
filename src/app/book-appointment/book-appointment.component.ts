@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DoctorProfileService } from '../services/doctor-profile.service';
-import { DocSearchResult } from '../models/docsearchresult';
 import { doctorProfile } from '../models/doctorprofile';
+import { AppointmentPost } from '../models/appointmentpost';
+import { DatePipe } from '@angular/common';
+import { BookappointmentService } from '../services/bookappointment.service';
+
 
 @Component({
   selector: 'app-book-appointment',
@@ -11,12 +14,15 @@ import { doctorProfile } from '../models/doctorprofile';
 })
 export class BookAppointmentComponent implements OnInit {
 
+  pipe = new DatePipe('en-US');
   doctorId:string;
+  appointmentStatus:string;
   isVideo=true;
   consultType:string;
   consultDate:Date;
   consultTime:String;
   doctor:doctorProfile={
+    id:"",
     name:"",
     bio:"",
     profileurl:"",
@@ -45,22 +51,16 @@ export class BookAppointmentComponent implements OnInit {
   specialization : string=" ";
 
 
+
   constructor(private activatedRoute:ActivatedRoute,
-              private profileService : DoctorProfileService) { }
+              private profileService : DoctorProfileService,
+              private appointmentService : BookappointmentService) { }
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe(params =>{
       this.doctorId=params.get('doctorId');
       this.profileService.getDoctorProfile(this.doctorId).subscribe(docdata=>{
         this.doctor=docdata;
-      //   for(const ele of this.doctor.qualification){
-      //     this.qualification+=ele+",";
-      // }
-      // this.qualification=this.qualification.substr(0,this.qualification.length-1);
-      // for(const ele of this.doctor.specialization){
-      //   this.specialization+=ele+",";
-      // }
-      // this.specialization=this.specialization.substr(0,this.specialization.length-1);
       this.qualification=docdata.qualification;
       this.specialization=docdata.specialisation;
       })
@@ -71,6 +71,54 @@ export class BookAppointmentComponent implements OnInit {
       });
       this.isVideo=this.consultType=='Video';
     })
+  }
+
+  onSubmit(form){
+    let date=this.pipe.transform(this.consultDate, 'dd/MM/yyyy');
+    date=date.replace('/','');
+    date=date.replace('/','');
+    let time="";
+    if(this.consultTime.localeCompare("12:00 AM")==0)
+      time="2400";
+    else if(this.consultTime.localeCompare("12:00 PM")==0)
+      time="1200";
+    else{
+      let n=this.consultTime.length;
+      let am;
+      let flag;
+      if(n==7)  am= this.consultTime.substring(4,7);
+      else  am= this.consultTime.substring(5,7);
+      if(am.localeCompare(" AM")==0) flag=false;
+      else flag=true;
+      let hr;
+      if(n==7) hr=parseInt(this.consultTime.substring(0,1));
+      else hr=parseInt(this.consultTime.substring(0,2));
+      if(!flag){
+        hr%=12;
+        time+=String(hr);
+        if(n==7) time+=this.consultTime.substring(2,4);
+        else time+=this.consultTime.substring(3,5);
+      } 
+      else{
+        hr=(hr+12)%24;
+        time+=String(hr);
+        if(n==7) time+=this.consultTime.substring(2,4);
+        else time+=this.consultTime.substring(3,5);
+      }
+    }
+    let appointmentPost:AppointmentPost={
+      dateofappointment:date,
+      timeofappointment:time,
+      doctorid:this.doctorId,
+      patientid:form.value.patientName,
+      appointmentdesc:form.value.desc,
+    }
+
+    this.appointmentService.bookAppointment(appointmentPost).subscribe(data=>{
+      this.appointmentStatus=data;
+      console.log(this.appointmentStatus);
+    })
+
   }
 
 }

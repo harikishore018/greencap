@@ -1,4 +1,5 @@
 export interface doctorProfile{
+    id:string;
     name:string;
     bio:string;
     profileurl:string;
