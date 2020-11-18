@@ -1,0 +1,37 @@
+<div class="content success-page-cont">
+    <div class="container-fluid">
+    
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+            
+                <!-- Success Card --> 
+                <div class="card success-card" *ngIf='confirmation' >
+                    <div class="card-body">
+                        <div class="success-cont">
+                            <i class="fa fa-check"></i>
+                            <h3>Appointment booked Successfully!</h3>
+                            <p>Appointment booked with <strong>{{doctorName}}</strong><br> on <strong>{{consultationDate | date }} at {{consultationTime}}</strong></p>
+                            <a href="invoice-view.html" class="btn btn-primary view-inv-btn">View Invoice</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Success Card -->
+                <!-- Success Card --> 
+                <div class="card success-card"  *ngIf='!confirmation'>
+                    <div class="card-body">
+                        <div class="success-cont">
+                            <i class="fa fa-times" style="color: red; background-color: white;"></i>
+                            <h3>Appointment booking failed!</h3>
+                            <p>Please change date and time!</p>
+                            <!-- <p>Appointment booked with <strong>{{doctorName}}</strong><br> on <strong>{{consultationDate}} at {{consultationTime}}</strong></p> -->
+                            <a href="invoice-view.html" class="btn btn-primary view-inv-btn">Go Back</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Success Card -->
+                
+            </div>
+        </div>
+        
+    </div>
+</div>		

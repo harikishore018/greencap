@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { AuthService } from '../authentication/auth.service';
+import { LoginService } from '../services/login.service';
 import { ProfileService } from '../services/profile.service';
 
 @Component({
@@ -9,34 +11,40 @@ import { ProfileService } from '../services/profile.service';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor(private profileService : ProfileService,
-              private authService : AuthService 
+  status;
+  patientId;
+
+  constructor(private loginSerivce : LoginService,
+              private activatedRoute :ActivatedRoute
               ) { }
 
   ngOnInit(): void {
+    this.activatedRoute.paramMap.subscribe(params =>{
+      this.patientId=params.get('patientId');
+    });
   }
+
 
   updateProfile( form ){
     
     let profile={
-      FirstName : form.value.firstname,
-      SecondName : form.value.secondname,
-      Email : form.value.email,
-      BloodGroup :form.value.bloodgroup,
-      DateOfBirth : form.value.dateofbirth,
-      DoorNo : form.value.doorno,
-      Street:form.value.street,
+      username :this.patientId,
+      firstname : form.value.firstname,
+      lastname : form.value.secondname,
+      profileurl : form.value.avatar,
+      email : form.value.email,
+      bloodgroup :form.value.bloodgroup,
+      dob : form.value.dateofbirth,
+      address : form.value.doorno,
       city :form.value.city,
       state : form.value.state,
       country : form.value.country,
-      Zip :form.value.zip
+      zipcode :form.value.zip
     }
-
-    this.profileService.addProfile(profile).subscribe(data =>{
-      console.log(data);
-    },err =>{
-      console.log(err.message);
+    this.loginSerivce.addProfile(profile).subscribe(data=>{
+      this.status=data;
     });
+
   }
 
 }

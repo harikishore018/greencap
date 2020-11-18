@@ -28,6 +28,10 @@ import { DoctorprofileComponent } from './doctorprofile/doctorprofile.component'
 import { BookAppointmentComponent } from './book-appointment/book-appointment.component';
 import { PaymentComponent } from './payment/payment.component';
 import { PatientDashboardComponent } from './patient-dashboard/patient-dashboard.component';
+import { AppointmentconfirmationComponent } from './appointmentconfirmation/appointmentconfirmation.component';
+import { DoctordashboardComponent } from './doctordashboard/doctordashboard.component';
+import { HomeComponent } from './home/home.component';
+import { LoginandregisterComponent } from './loginandregister/loginandregister.component';
 // import { HomeComponent } from './home/home.component';
 
 
@@ -41,7 +45,11 @@ import { PatientDashboardComponent } from './patient-dashboard/patient-dashboard
     DoctorprofileComponent,
     BookAppointmentComponent,
     PaymentComponent,
-    PatientDashboardComponent
+    PatientDashboardComponent,
+    AppointmentconfirmationComponent,
+    DoctordashboardComponent,
+    HomeComponent,
+    LoginandregisterComponent
     // HomeComponent
 
     

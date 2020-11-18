@@ -1,15 +1,12 @@
 export interface DocSearchResult{
-    id : number;
+    id : string;
     name : String;
-    specialization : string[];
-    experience : number;
-    qualification : string[];
+    url:string;
+    specialization : string;
+    experience : string;
+    qualifications : string;
     location : String;
     clinic : String;
-    description : String;
-    rating : number;
-    consultationfee : number;
-    isverified : boolean;
-    videoavailability:string[][];
-    clinicavailability:string[][];
+    totalRating : number;
+    fee : number;
 }

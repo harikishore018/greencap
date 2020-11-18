@@ -57,7 +57,7 @@ export class DoctorprofileComponent implements OnInit {
     totalRating:0,
     availableslots:[[]],
     clinicslots:[
-      [],
+      [1100,1200,1400,1530],
       [1300,1200,100],
       [1300,1200,100],
       [1300,1200,100],
@@ -77,7 +77,6 @@ export class DoctorprofileComponent implements OnInit {
       this.doctorId=params.get('doctorId');
       this.doctorprofileService.getDoctorProfile(this.doctorId).subscribe(data =>{
         this.doctor=data;
-        console.log(this.doctor.profileurl);
         // for(const ele of this.doctor.qualification){
         //     this.qualification+=ele+",";
         // }
@@ -88,7 +87,8 @@ export class DoctorprofileComponent implements OnInit {
         // this.specialization=this.specialization.substr(0,this.specialization.length-1);
         this.qualification=this.doctor.qualification;
         this.specialization=this.doctor.specialisation;
-
+        if(isNaN(this.doctor.totalRating))
+          this.doctor.totalRating=1;
         this.fullstar=Array(Math.floor(this.doctor.totalRating)).fill(1);
         this.halfstar=this.doctor.totalRating-Math.floor(this.doctor.totalRating) >= 0.5;
         this.emptystar=Array(5-this.fullstar.length-(this.halfstar==true? 1 : 0)).fill(1);
@@ -96,7 +96,7 @@ export class DoctorprofileComponent implements OnInit {
         // console.log(this.doctor.availableslots[0]);
         this.doctor.availableslots=data.availableslots;
         this.doctor.clinicslots=[
-          [],
+          [1100,1245,1300,1500],
           [1300,1200,100],
           [1300,1200,100],
           [1300,1200,100],

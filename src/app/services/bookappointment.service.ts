@@ -11,6 +11,6 @@ export class BookappointmentService {
 
   bookAppointment(appointmentData){
     let postUrl="http://10.0.1.4:8080/appointment-fixing-service/appointments/book/";
-    return this.httpClient.post<any>(postUrl,appointmentData);
+    return this.httpClient.post<any>(postUrl,appointmentData,{responseType: 'text' as 'json'});
   }
 }

@@ -1,6 +1,6 @@
 export interface AppointmentPost{
-        dateofappointment:string;
-        timeofappointment:string;
+        dateofappointment:number;
+        timeofappointment:number;
         doctorid:string;
         patientid:string;
         appointmentdesc:string;

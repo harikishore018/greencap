@@ -4,28 +4,41 @@ import { Subscription } from 'rxjs';
 import { User } from '../models/user.model';
 import { SearchService } from '../services/search.service';
 import { Router } from '@angular/router';
+import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit , OnDestroy{
+export class HeaderComponent implements OnInit {
 
-  isAuthenticated =false;
+  isAuthenticated ;
   private userSub : Subscription;
   locations : String;
   specializations : String;
+  userCreds;
   selectedSpec: string = 'All Doctors';
   selectedLocation: string = 'All Locations';
   //user:User;
 
-  constructor(private authService : AuthService,
+  constructor(private loginService:LoginService,
               private searchService : SearchService ,
               private router : Router
+
               ) { }
 
   ngOnInit(): void {
+
+    this.userCreds=localStorage.getItem('userData');
+    if(localStorage.getItem('userData')===null){
+      this.isAuthenticated=false;
+    }
+    else{
+      this.isAuthenticated=true;
+    }
+    console.log(this.userCreds);
+
     this.searchService.getLocations().subscribe( data => {
       this.locations=data;
     });
@@ -34,19 +47,19 @@ export class HeaderComponent implements OnInit , OnDestroy{
       this.specializations=data;
     });
     
-    this.userSub=this.authService.user.subscribe(user=>{
-      this.isAuthenticated=!!user;
-      //this.user=user;
-    });
+    // this.userSub=this.authService.user.subscribe(user=>{
+    //   this.isAuthenticated=!!user;
+    //   //this.user=user;
+    // });
   }
 
-  onLogout(){
-    this.authService.logout();
-  }
+  // onLogout(){
+  //   this.authService.logout();
+  // }
 
-  ngOnDestroy():void {
-    this.userSub.unsubscribe();
-  }
+  // ngOnDestroy():void {
+  //   this.userSub.unsubscribe();
+  // }
 
   //event handler for the select element's change event
   selectSpecHandler (event: any) {
@@ -59,6 +72,10 @@ export class HeaderComponent implements OnInit , OnDestroy{
   fetchDoctors(){
     this.router.navigate(['/searchresults'],{ queryParams: { 'specialization': this.selectedSpec ,'location': this.selectedLocation} });
   }
+
+  displayName(){
+    return JSON.parse(localStorage.getItem("userData")).username;
+  } 
 
 
 

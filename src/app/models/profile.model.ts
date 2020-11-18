@@ -1,13 +1,14 @@
 export interface Profile{
-    FirstName : String;
-    SecondName : String;
-    Email : String;
-    BloodGroup :String;
-    DateOfBirth : Date;
-    DoorNo : String;
-    Street:String;
-    City :String;
-    State : String;
-    Country : String;
-    Zip :number;
+    username: String;
+    firstname : String;
+    lastname : String;
+    profileurl :String;
+    email : String;
+    bloodgroup :String;
+    dob :number;
+    address : String;
+    city :String;
+    state : String;
+    country : String;
+    zipcode :number;
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DoctorProfileService } from '../services/doctor-profile.service';
 import { doctorProfile } from '../models/doctorprofile';
 import { AppointmentPost } from '../models/appointmentpost';
@@ -15,6 +15,7 @@ import { BookappointmentService } from '../services/bookappointment.service';
 export class BookAppointmentComponent implements OnInit {
 
   pipe = new DatePipe('en-US');
+  confirmation:boolean;
   doctorId:string;
   appointmentStatus:string;
   isVideo=true;
@@ -31,7 +32,7 @@ export class BookAppointmentComponent implements OnInit {
     experience:"",
     phno:"",
     address:"",
-    city:"",
+    city:"", 
     clinic:"",
     reviews:[],
     ratings:[],
@@ -54,7 +55,8 @@ export class BookAppointmentComponent implements OnInit {
 
   constructor(private activatedRoute:ActivatedRoute,
               private profileService : DoctorProfileService,
-              private appointmentService : BookappointmentService) { }
+              private appointmentService : BookappointmentService,
+              private router:Router) { }
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe(params =>{
@@ -107,18 +109,29 @@ export class BookAppointmentComponent implements OnInit {
       }
     }
     let appointmentPost:AppointmentPost={
-      dateofappointment:date,
-      timeofappointment:time,
+      dateofappointment:parseInt(date),
+      timeofappointment:parseInt(time),
       doctorid:this.doctorId,
       patientid:form.value.patientName,
       appointmentdesc:form.value.desc,
     }
-
+    console.log(appointmentPost);
     this.appointmentService.bookAppointment(appointmentPost).subscribe(data=>{
       this.appointmentStatus=data;
+      console.log(JSON.stringify(appointmentPost)); 
       console.log(this.appointmentStatus);
-    })
+      if(this.appointmentStatus.localeCompare("AppointmentFixed"))
+        this.confirmation=true;
+      else this.confirmation=false;
+      this.router.navigate(['appointment-confirmation/'+this.doctorId],{queryParams:{
+        dateofappointment:this.consultDate,
+        timeofappointment:this.consultTime,
+        doctorname:this.doctor.name,
+        confirmation:this.confirmation
+      }});
+    });
 
   }
-
+ 
 }
+

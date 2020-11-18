@@ -1,4 +1,4 @@
-.nav-item .nav-link {
+ .nav-item .nav-link {
     color: black;
     margin-right: 10px;
     margin-left: 10px;
@@ -14,11 +14,7 @@ nav{
     border-bottom-style: solid;
     border-bottom-color: rgb(218, 213, 213);
     border-bottom-width: 3px; 
-     /* padding-top: 40px; */
-    /* padding-bottom: 1px; */
     padding-top: 5px;
-    /* display: inline; */
-    /* padding-left: 0px; */
 }
 .navbar-toggler{
     color: black;
@@ -37,7 +33,6 @@ nav{
 .navbar .title{
     color: rgb(91, 202, 91);
     font-size: x-large;
-    /* margin-right: 40px; */
 }
 
 .navbar-toggler-icon {
@@ -46,14 +41,12 @@ nav{
 
 li:hover{ 
     cursor: pointer;
-    /* transform: scale(1.2); */
 }
 li .nav-link:hover{
     color: rgb(245, 71, 18);
 }
 
 
-/*search box css start here*/
 .search-sec{
     padding: 2rem;
 }
@@ -76,17 +69,22 @@ li .nav-link:hover{
     text-transform: capitalize;
     height: calc(3rem + 2px) !important;
     border-radius:0;
-}
-/* @media (min-width: 992px){
-    .search-sec{
-        position: relative;
-        top: -114px;
-        background: rgba(26, 70, 104, 0.51);
-    }
-}
+} 
 
-@media (max-width: 992px){
-    .search-sec{
-        background: #1A4668;
-    }
-} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
